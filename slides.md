@@ -439,15 +439,21 @@ layout: section
 
 ---
 
-# Judging Criteria
+# Community Vote
 
-| Criterion | Weight | What We're Looking For |
-|-----------|--------|----------------------|
-| **AI Primitive Quality** | 30% | Well-structured agents, instructions, and skills. Clear separation of concerns. |
-| **Specification Quality** | 20% | Clean business-focused specs free of prototype implementation details. |
-| **Implementation Plan** | 15% | Logical dependency graph, well-defined issues with traceability. |
-| **Working Solution** | 20% | Features that actually work — functionality over quantity. |
-| **Creativity & Innovation** | 15% | Novel use of AI primitives, hooks, agent handoffs, or skills. |
+After all teams have presented, **every participant votes** for their favorite team.
+
+### What to Consider When Voting
+
+| Aspect | What to Look For |
+|--------|------------------|
+| **AI Primitive Quality** | Well-structured agents, instructions, and skills. Clear separation of concerns. |
+| **Specification Quality** | Clean business-focused specs free of prototype implementation details. |
+| **Implementation Plan** | Logical dependency graph, well-defined issues with traceability. |
+| **Working Solution** | Features that actually work — functionality over quantity. |
+| **Creativity & Innovation** | Novel use of AI primitives, hooks, agent handoffs, or skills. |
+
+> **You cannot vote for your own team.** The team with the most votes wins!
 
 ---
 layout: center
@@ -466,4 +472,4 @@ The quality of the constraints you design determines the quality of the software
 
 <br>
 
-**Winner announced → GitHub Swag Shop Voucher!** 🎉
+**Community vote → Winner announced → GitHub Swag Shop Voucher!** 🎉

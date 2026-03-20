@@ -135,36 +135,36 @@ The user stories (US-01 through US-05) contain **prototype-specific technical de
 
 # How Primitives Work Together
 
+<div style="font-size: 0.65em; line-height: 1.2;">
+
 ```
 User Request
     │
     ▼
-┌─────────────────────────────────┐
-│  Workspace Instructions         │  ← Always loaded (project DNA)
-│  .github/copilot-instructions.md│
-└─────────────┬───────────────────┘
-              │
-              ▼
-┌─────────────────────────────────┐
-│  Custom Agent                   │  ← Specialized persona with tool restrictions
-│  .github/agents/backend.agent.md│
-│  ┌────────────────────────┐     │
-│  │ Skills (on-demand)     │     │  ← Agent loads skills when task matches
-│  │ .github/skills/db-seed/│     │
-│  └────────────────────────┘     │
-│  ┌────────────────────────┐     │
-│  │ File Instructions      │     │  ← Auto-attached for matching file patterns
-│  │ api-design.instructions│     │
-│  └────────────────────────┘     │
-└─────────────┬───────────────────┘
-              │
-              ▼
-┌─────────────────────────────────┐
-│  Hooks                          │  ← Enforce policy at lifecycle events
-│  PreToolUse → validate          │
-│  PostToolUse → lint/format      │
-└─────────────────────────────────┘
+┌──────────────────────────────────┐
+│  Workspace Instructions          │  ← Always loaded (project DNA)
+│  .github/copilot-instructions.md │
+└───────────────┬──────────────────┘
+                ▼
+┌──────────────────────────────────┐
+│  Custom Agent                    │  ← Specialized persona + tool restrictions
+│  .github/agents/backend.agent.md │
+│  ┌─────────────────────────┐     │
+│  │ Skills (on-demand)      │     │  ← Loaded when task matches
+│  └─────────────────────────┘     │
+│  ┌─────────────────────────┐     │
+│  │ File Instructions       │     │  ← Auto-attached for file patterns
+│  └─────────────────────────┘     │
+└───────────────┬──────────────────┘
+                ▼
+┌──────────────────────────────────┐
+│  Hooks                           │  ← Enforce policy at lifecycle events
+│  PreToolUse → validate           │
+│  PostToolUse → lint/format       │
+└──────────────────────────────────┘
 ```
+
+</div>
 
 ---
 layout: section

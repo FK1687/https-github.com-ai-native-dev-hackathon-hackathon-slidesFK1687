@@ -168,6 +168,7 @@ User Request
 
 ---
 layout: section
+class: bg-black text-white
 ---
 
 # SPRINT 1: THE GUARDRAILS
@@ -222,6 +223,7 @@ This is an AI-native hackathon — **don't hand-write your agent files from scra
 
 ---
 layout: section
+class: bg-black text-white
 ---
 
 # SPRINT 2: THE SPECIFICATION
@@ -305,6 +307,7 @@ After generating each spec, verify: ✅ No framework/library names · ✅ No CSS
 
 ---
 layout: section
+class: bg-black text-white
 ---
 
 # SPRINT 3: THE BLUEPRINT
@@ -334,6 +337,7 @@ layout: section
 
 ---
 layout: section
+class: bg-black text-white
 ---
 
 # SPRINT 4: THE BUILD
@@ -411,6 +415,7 @@ This is the capstone: create an **orchestrator agent** that automates the build 
 
 ---
 layout: section
+class: bg-black text-white
 ---
 
 # SHOW & TELL

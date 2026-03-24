@@ -1,0 +1,16 @@
+[
+  {
+    "event": "postToolUse",
+    "tool": "run_in_terminal",
+    "steps": [
+      {
+        "type": "validate",
+        "rules": [
+          "If the command was a build or test command, check the output for errors",
+          "If TypeScript compilation errors are present, they must be fixed before proceeding",
+          "If lint errors are present, they must be fixed before proceeding"
+        ]
+      }
+    ]
+  }
+]

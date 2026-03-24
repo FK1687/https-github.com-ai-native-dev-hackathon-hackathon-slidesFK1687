@@ -1,0 +1,18 @@
+[
+  {
+    "event": "preToolUse",
+    "tool": "replace_string_in_file",
+    "steps": [
+      {
+        "type": "validate",
+        "rules": [
+          "The edit must not introduce `any` type annotations in TypeScript files",
+          "The edit must not add `console.log` statements",
+          "The edit must not hardcode secrets, API keys, or credentials",
+          "The edit must not use `@ts-ignore` or `@ts-expect-error`",
+          "The edit must not use string concatenation in SQL queries"
+        ]
+      }
+    ]
+  }
+]

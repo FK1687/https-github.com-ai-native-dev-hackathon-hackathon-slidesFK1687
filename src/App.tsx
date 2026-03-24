@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from '@/features/app-shell';
 import { Skeleton } from '@/components/ui';
 
@@ -24,7 +24,7 @@ function PageFallback(): JSX.Element {
 
 export function App(): JSX.Element {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Suspense fallback={<PageFallback />}><ProductFinder /></Suspense>} />
@@ -34,6 +34,6 @@ export function App(): JSX.Element {
           <Route path="contact" element={<Suspense fallback={<PageFallback />}><ContactSales /></Suspense>} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

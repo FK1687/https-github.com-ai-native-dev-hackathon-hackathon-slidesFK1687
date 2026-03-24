@@ -28,7 +28,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
         env:
-          BASE_URL: /https-github.com-ai-native-dev-hackathon-hackathon-slidesFK1687/
+          BASE_URL: ./
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

@@ -71,7 +71,6 @@ You have a working prototype (Figma Make export) of an industrial adhesive produ
 
 # The Prototype — What You're Starting With
 
-### Copilot Space: `kleb-prototype`
 ### Repository: `ai-native-dev-hackathon/kleb-productfinder-prototype`
 
 **What's in the repo:**
@@ -252,25 +251,25 @@ class: bg-black text-white
 
 ---
 
-# Sprint 2 — Copilot Spaces MCP
+# Sprint 2 — GitHub MCP
 
-The prototype user stories live in the **kleb-prototype** Copilot Space. Your agents can read them directly using the **Copilot Spaces MCP server**.
+The prototype user stories live in the **kleb-productfinder-prototype** repo. Your agents can read them directly using the **GitHub MCP server**.
 
-### What Is Copilot Spaces MCP?
+### What Is GitHub MCP?
 
-Copilot Spaces expose an **MCP (Model Context Protocol) server** that lets any agent or prompt fetch files from the space — just like reading local files, but from a shared knowledge base.
+The GitHub MCP server lets any agent or prompt fetch files from GitHub repositories — just like reading local files, but from any repo you have access to.
 
 ### How to Enable It
 
-1. Open the **kleb-prototype** Copilot Space in VS Code
-2. Click **"Use as Tool"** in the Space panel — this registers the MCP endpoint
-3. The Space now appears as a tool that any agent can call
+1. Open VS Code Settings and search for **MCP**
+2. Ensure the **GitHub MCP server** is enabled (it ships with the GitHub Copilot extension)
+3. Your agents and prompts can now read files from any GitHub repo
 
-Once enabled, your agents and prompts can reference files from the Space:
+Once enabled, your agents and prompts can reference files from the prototype repo:
 
 ```
-Read the user story at `01-application-overview-layout-navigation-filters.md`
-from the kleb-prototype space.
+Read the user story at `Handover to DEV/01-application-overview-layout-navigation-filters.md`
+from the ai-native-dev-hackathon/kleb-productfinder-prototype repo on GitHub.
 ```
 
 ---
@@ -291,7 +290,7 @@ Create a **custom agent** or **reusable prompt** that:
 # Sprint 2 — Tips & Pitfalls
 
 ### Do's
-- Have the agent read the prototype user story **and** the Copilot Space context for background
+- Have the agent read the prototype user story via GitHub MCP
 - Store specs in a consistent location (`docs/specs/`) with a naming convention
 - Cross-reference between specs (e.g., "Compare feature" references "Product Card" from the catalog spec)
 - Include business constraints that could be missed (e.g., "pagination at 24 items")
@@ -379,7 +378,9 @@ This is the capstone: create an **orchestrator agent** that automates the build 
 4. Execute tasks in dependency order, delegating each to the agent named in the issue
 5. Report progress after each completed task
 
-### Key Design Decisions
+---
+
+# Sprint 4 — Orchestrator Design Decisions
 
 | Decision | Options |
 |----------|---------|
@@ -398,20 +399,14 @@ This is the capstone: create an **orchestrator agent** that automates the build 
 ### Do's
 - Start with **foundation specs** (App Shell, shared components) before feature specs
 - Let the orchestrator handle **one spec at a time** for clarity
-- Iterate: if a subagent produces incorrect code, **refine the agent instructions** and re-run
-- Use the workspace instructions to ensure consistent code style across all agents' output
+- If a subagent produces incorrect code, **refine the agent instructions** and re-run
 
 ### Don'ts
-- Don't try to run all specs in parallel — shared components must exist first
-- Don't expect perfection on the first pass — this is an iterative process
+- Don't run all specs in parallel — shared components must exist first
 - Don't manually fix agent output without updating the agent instructions (fix the system, not the symptom)
-- Don't forget to commit working code between spec completions
 
 ### When Things Go Wrong
-- **Agent produces wrong tech stack?** → Check your workspace instructions
-- **Agent ignores a constraint?** → Add it explicitly to the agent's system prompt
-- **Tasks executed out of order?** → Verify the dependency graph in your issues
-- **Subagent can't be found?** → Check the `description` field — it's the discovery surface
+**Wrong tech stack?** → Check workspace instructions · **Ignores a constraint?** → Add it to the agent's system prompt · **Out of order?** → Verify the dependency graph · **Subagent not found?** → Check its `description` field
 
 ---
 layout: section
